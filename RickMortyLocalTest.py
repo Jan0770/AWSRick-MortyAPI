@@ -22,39 +22,39 @@ def getCharacters():
             }
             characters.append(processedResults)
         
-    print(characters)    
+    print(characters[0])    
         
 ######## DynamoDB
-    for i in range(60):
-        RequestItems = {
-                    'RickMortyAPITable': [
-                        {
-                            'PutRequest': {
-                                'Item': {
-                                    'ID': {
-                                        'N': characters[i]["ID"],
-                                    },
-                                    'Name': {
-                                        'S': characters[i]["Name"],
-                                    },
-                                    'Species': {
-                                        'S': characters[i]["Species"],
-                                    },
-                                    'Status': {
-                                        'S': characters[i]["Status"],
-                                    },
-                                    'Origin': {
-                                        'S': characters[i]["Origin"],
-                                    },
-                                    'Image': {
-                                        'S': characters[i]["Image"],
-                                    },
-                                },
-                            },
-                        },
-                    ],
-                },
+    # for i in range(60):
+    #     RequestItems = {
+    #                 'RickMortyAPITable': [
+    #                     {
+    #                         'PutRequest': {
+    #                             'Item': {
+    #                                 'ID': {
+    #                                     'N': characters[i]["ID"],
+    #                                 },
+    #                                 'Name': {
+    #                                     'S': characters[i]["Name"],
+    #                                 },
+    #                                 'Species': {
+    #                                     'S': characters[i]["Species"],
+    #                                 },
+    #                                 'Status': {
+    #                                     'S': characters[i]["Status"],
+    #                                 },
+    #                                 'Origin': {
+    #                                     'S': characters[i]["Origin"],
+    #                                 },
+    #                                 'Image': {
+    #                                     'S': characters[i]["Image"],
+    #                                 },
+    #                             },
+    #                         },
+    #                     },
+    #                 ],
+    #             },
             
-    print(RequestItems)
+
 
 getCharacters()

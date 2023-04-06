@@ -59,7 +59,18 @@ def lambda_handler(event, context):
                     ],
                 },
             )
+
+######## Place in S3   
+        # Convert to JSON         
+        charactersJSON = json.dumps(characters)
         
+        s3.put_object(
+            Bucket = "rickandmortyneuefische2023",
+            Body = "charactersJSON.json",
+            Key = "rickandmortyCharacters.json"
+        )
+        
+
         return characters    
       
     except Exception as e:
